@@ -32,7 +32,7 @@ Numero = 0 | [1-9][0-9]*
 %%
 
 /* Comentarios o espacios en blanco */
-{Comentario} { return textColor(yychar, yylength(), new Color(146, 146, 146)); }
+{Comentario} { return textColor(yychar, yylength(), new Color(0, 68, 255)); }
 {EspacioEnBlanco} { /*Ignorar*/ }
 
 . { /* Ignorar */ }

@@ -51,7 +51,7 @@ public class Compilador extends javax.swing.JFrame {
     }
 
     private void init() {
-        title = "Compiler";
+        title = "Compilador - Unipoli Dgo";
         setLocationRelativeTo(null);
         setTitle(title);
         directorio = new Directory(this, jtpCode, title, ".comp");
@@ -102,6 +102,10 @@ public class Compilador extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
+
+        rootPanel.setBackground(new java.awt.Color(255, 255, 255));
+
+        buttonsFilePanel.setBackground(new java.awt.Color(255, 255, 255));
 
         btnAbrir.setText("Abrir");
         btnAbrir.addActionListener(new java.awt.event.ActionListener() {
@@ -160,6 +164,10 @@ public class Compilador extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(jtpCode);
 
+        panelButtonCompilerExecute.setBackground(new java.awt.Color(255, 255, 255));
+
+        btnCompilar.setBackground(new java.awt.Color(51, 204, 0));
+        btnCompilar.setForeground(new java.awt.Color(255, 255, 255));
         btnCompilar.setText("Compilar");
         btnCompilar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
