@@ -14,10 +14,10 @@ import compilerTools.Token;
 TerminadorDeLinea = \r|\n|\r\n
 EntradaDeCaracter = [^\r\n]
 EspacioEnBlanco = {TerminadorDeLinea} | [ \t\f]
-ComentarioTradicional = "/*" [^*] ~"*/" | "/*" "*"+ "/"
+ComentarioTradicional = "/" [^] ~"/" | "/" "*"+ "/"
 FinDeLineaComentario = "//" {EntradaDeCaracter}* {TerminadorDeLinea}?
-ContenidoComentario = ( [^*] | \*+ [^/*] )*
-ComentarioDeDocumentacion = "/**" {ContenidoComentario} "*"+ "/"
+ContenidoComentario = ( [^] | \+ [^/] )
+ComentarioDeDocumentacion = "/*" {ContenidoComentario} ""+ "/"
 
 /* Comentario */
 Comentario = {ComentarioTradicional} | {FinDeLineaComentario} | {ComentarioDeDocumentacion}
@@ -32,7 +32,7 @@ Numero = 0 | [1-9][0-9]*
 %%
 
 /* Comentarios o espacios en blanco */
-{Comentario}|{EspacioEnBlanco} { /*Ignorar*/ }
+{Comentario}|{EspacioEnBlanco} { /Ignorar/ }
 
 /* Identificador */
 \${Identificador} { return token(yytext(), "ID", yyline, yycolumn); }
