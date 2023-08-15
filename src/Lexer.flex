@@ -100,5 +100,11 @@ read {return token(yytext(), "LEER", yyline, yycolumn);}
 true {return token(yytext(), "VERDADERO", yyline, yycolumn);}
 false {return token(yytext(), "FALSO", yyline, yycolumn);}
 
+/* NUMERO ERROR */
+0{Numero} {return token(yytext(), "ERROR_1", yyline, yycolumn);}
+
+/* Identificador Erroneo */
+{Identificador} {return token(yytext(), "ERROR_2", yyline, yycolumn);}
+
 
 . { return token(yytext(), "ERROR", yyline, yycolumn); }

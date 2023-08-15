@@ -209,6 +209,7 @@ public class Compilador extends javax.swing.JFrame {
         jtaOutputConsole.setRows(5);
         jScrollPane2.setViewportView(jtaOutputConsole);
 
+        tblTokens.setForeground(new java.awt.Color(255, 255, 255));
         tblTokens.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

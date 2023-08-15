@@ -4,10 +4,13 @@ $mario = 'nombre'
 
 if ( $nombre == $usuario ) {
 
-while ( $nombre == 'hola' ){
+while ( $nombre == 'holamundo' ){
 
 $nombre = 53
 
 }
 
+
+
 }
+

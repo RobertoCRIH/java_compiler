@@ -633,7 +633,7 @@ class LexerColor {
             // fall through
           case 5: break;
           case 3:
-            { return textColor(yychar, yylength(), new Color(0, 68, 255));
+            { return textColor(yychar, yylength(), new Color(128, 128, 128));
             }
             // fall through
           case 6: break;
