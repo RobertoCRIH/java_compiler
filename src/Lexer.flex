@@ -74,6 +74,31 @@ Numero = 0 | [1-9][0-9]*
 \* {return token(yytext(), "MULTI", yyline, yycolumn);}
 \/ {return token(yytext(), "DIVISION", yyline, yycolumn);}
 
+/* LOGICA */
+\&& {return token(yytext(), "AND", yyline, yycolumn);}
+
+/* PALABRAS RESERVADAS */
+init {return token(yytext(), "EMPEZAR", yyline, yycolumn);}
+end {return token(yytext(), "TERMINAR", yyline, yycolumn);}
+array {return token(yytext(), "ARREGLO", yyline, yycolumn);}
+then {return token(yytext(), "DEPUES", yyline, yycolumn);}
+var {return token(yytext(), "VARIABLE", yyline, yycolumn);}
+endif {return token(yytext(), "TERMINAR SI", yyline, yycolumn);}
+interger {return token(yytext(), "ENTERO", yyline, yycolumn);}
+repeat {return token(yytext(), "REPETIR", yyline, yycolumn);}
+else {return token(yytext(), "ELSE", yyline, yycolumn);}
+until {return token(yytext(), "UNTIL", yyline, yycolumn);}
+string {return token(yytext(), "STRING FUNC", yyline, yycolumn);}
+for {return token(yytext(), "POR", yyline, yycolumn);}
+write {return token(yytext(), "ESCRIBIR", yyline, yycolumn);}
+do {return token(yytext(), "DO", yyline, yycolumn);}
+if {return token(yytext(), "SI", yyline, yycolumn);}
+char {return token(yytext(), "CARACTER", yyline, yycolumn);}
+while {return token(yytext(), "MIENTRAS", yyline, yycolumn);}
+bool {return token(yytext(), "BULEANO", yyline, yycolumn);}
+read {return token(yytext(), "LEER", yyline, yycolumn);}
+true {return token(yytext(), "VERDADERO", yyline, yycolumn);}
+false {return token(yytext(), "FALSO", yyline, yycolumn);}
 
 
 . { return token(yytext(), "ERROR", yyline, yycolumn); }
