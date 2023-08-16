@@ -354,6 +354,51 @@ public class Compilador extends javax.swing.JFrame {
     private void syntacticAnalysis() {
         Grammar gramatica = new Grammar(tokens, errors);
 
+        
+        /* Eliminar errores */
+        
+        gramatica.delete( new String[]{"ERROR"} , 1 );
+        
+        /*Agrupar valores */
+        
+        gramatica.group("VALOR", "NUMERO | STRING" , true);
+        
+        /*Declaracion Variables */
+        
+        gramatica.group("VARIABLES", "TIPO ID ASIGNACION VALOR",true);
+        //Errores de definicion de variables
+        gramatica.group("VARIABLES", "TIPO ASIGNACION VALOR",true, 2,"Error Sintactico. No hay identificador [#,%]");
+        gramatica.group("VARIABLES", "TIPO ID ASIGNACION ",true,3 ,"Error Sintactico. Falta el valor de la declaracion [#,%]");
+        gramatica.group("VARIABLES", "TIPO ID VALOR",true,4 ,"Error Sintactico. Falta el asignador de la declaracion [#,%]");
+        
+        /* Eliminacion de tipos de datos */
+        gramatica.delete("TIPO",5,"ERROR SINTACTICO {}. Tipo de dato sin declaración");
+        
+        //Agrupar identificadores y definicion de parametros
+        gramatica.group("VALOR", "ID", true);
+        gramatica.group("PARAMETROS", "VALOR (COMA VALOR)+");
+        
+        //Agrupar Comparaciones
+        gramatica.group("OPERADOR", "MAYORQUE | MAYOR_IGUALQUE | MENORQUE | MENOR_IGUALQUE | IGUALQUE");
+        gramatica.group("COMPARACION", "VALOR OPERADOR VALOR");
+        
+        //Expresion logica
+        gramatica.group("OP_LOGICO", "AND | OR");
+        gramatica.group("EXP_LOGICA", "(COMPARACION) (OP_LOGICO COMPARACION) ");
+        gramatica.group("EXP_LOGICA", "PARENTIZQ EXP_LOGICA PARENTDER");
+        gramatica.group("EXP_LOGICA", "(COMPARACION | EXP_LOGICA ) (OP_LOGICO (COMPARACION | EXP_LOGICA)) ");
+        
+        //AGRUPAR FUNCIONES
+        gramatica.group("FUNCION", "SI | TERMINAR_SI | UNTIL | POR | MIENTRAS | ESCRIBIR | LEER");
+        gramatica.group("FUNCION_COMPLETA", "FUNCION PARENTIZQ (VALOR | PARAMETROS | COMPARACION | EXP_LOGICA)? PARENTDER");
+        //Errores de funciones
+        gramatica.group("FUNCION_COMPLETA", "FUNCION (VALOR | PARAMETROS | COMPARACION)? PARENTDER",true, 6,
+                "ERROR SINTACTICO. Falta el parentesis que abre [#,%]");
+        gramatica.group("FUNCION_COMPLETA", "FUNCION PARENTIZQ (VALOR | PARAMETROS | COMPARACION)? ",true, 7,
+                "ERROR SINTACTICO. Falta el parentesis que cierra [#,%]");
+        
+        //Eliminacion de funciones incompletas
+        gramatica.delete("FUNCION",8,"error sintactico {}");
         /* Mostrar gramáticas */
         gramatica.show();
     }

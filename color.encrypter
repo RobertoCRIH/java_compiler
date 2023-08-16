@@ -1,13 +1,1 @@
-init 
-$mario = 'nombre' 
- end
-
-if ( $nombre == $usuario ) {
-
-while ( $nombre == 'hola' ){
-
-$nombre = 53
-
-}
-
-}
+if( $gato )

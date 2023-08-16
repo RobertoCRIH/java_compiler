@@ -102,13 +102,13 @@ class Lexer {
   private static final String ZZ_ACTION_PACKED_0 =
     "\1\0\1\1\2\2\4\1\1\3\1\4\1\5\1\6"+
     "\1\7\1\10\1\11\2\12\1\13\1\14\1\15\1\16"+
-    "\15\1\1\17\1\20\1\0\1\21\1\22\1\23\2\0"+
+    "\16\1\1\17\1\20\1\0\1\21\1\22\1\23\2\0"+
     "\1\2\1\24\1\25\1\26\3\0\1\27\4\0\1\30"+
-    "\20\0\1\31\1\0\1\32\10\0\1\33\4\0\1\2"+
-    "\1\0\1\34\1\35\1\36\2\0\1\37\1\0\1\40"+
-    "\2\0\1\41\1\42\4\0\1\43\1\44\1\45\3\0"+
-    "\1\46\1\47\1\50\2\0\1\51\1\52\1\53\1\0"+
-    "\1\54";
+    "\1\0\1\31\17\0\1\32\1\0\1\33\1\0\1\34"+
+    "\6\0\1\34\4\0\1\2\1\0\1\35\1\36\2\0"+
+    "\1\37\1\0\1\40\2\0\1\41\1\42\4\0\1\43"+
+    "\1\44\1\45\3\0\1\46\1\47\1\50\2\0\1\51"+
+    "\1\52\1\0\1\53";
 
   private static int [] zzUnpackAction() {
     int [] result = new int[121];
@@ -140,17 +140,17 @@ class Lexer {
     "\0\55\0\55\0\55\0\55\0\55\0\55\0\u013b\0\55"+
     "\0\u0168\0\55\0\u0195\0\u01c2\0\u01ef\0\u021c\0\u0249\0\u0276"+
     "\0\u02a3\0\u02d0\0\u02fd\0\u032a\0\u0357\0\u0384\0\u03b1\0\u03de"+
-    "\0\u040b\0\u0438\0\55\0\55\0\u0465\0\u0492\0\55\0\55"+
-    "\0\u010e\0\u04bf\0\u04ec\0\55\0\55\0\55\0\u0519\0\u0546"+
-    "\0\u0573\0\55\0\u05a0\0\u05cd\0\u05fa\0\u0627\0\55\0\u0654"+
-    "\0\u0681\0\u06ae\0\u06db\0\u0708\0\u0735\0\u0762\0\u078f\0\u07bc"+
-    "\0\u07e9\0\u0816\0\u0843\0\u0870\0\u089d\0\u08ca\0\u08f7\0\u0924"+
-    "\0\u0951\0\55\0\u097e\0\u09ab\0\u09d8\0\u0a05\0\u0a32\0\u0a5f"+
-    "\0\u0a8c\0\u0ab9\0\55\0\u0ae6\0\u0b13\0\u0b40\0\u0b6d\0\u0816"+
-    "\0\u0b9a\0\55\0\55\0\55\0\u0bc7\0\u0bf4\0\55\0\u0c21"+
-    "\0\55\0\u0c4e\0\u0c7b\0\55\0\55\0\u0ca8\0\u0cd5\0\u0d02"+
-    "\0\u0d2f\0\55\0\55\0\55\0\u0d5c\0\u0d89\0\u0db6\0\55"+
-    "\0\55\0\55\0\u0de3\0\u0e10\0\55\0\55\0\55\0\u0e3d"+
+    "\0\u040b\0\u0438\0\u0465\0\55\0\55\0\u0492\0\u04bf\0\55"+
+    "\0\55\0\u010e\0\u04ec\0\u0519\0\55\0\55\0\55\0\u0546"+
+    "\0\u0573\0\u05a0\0\55\0\u05cd\0\u05fa\0\u0627\0\u0654\0\55"+
+    "\0\u0681\0\55\0\u06ae\0\u06db\0\u0708\0\u0735\0\u0762\0\u078f"+
+    "\0\u07bc\0\u07e9\0\u0816\0\u0843\0\u0870\0\u089d\0\u08ca\0\u08f7"+
+    "\0\u0924\0\u0951\0\u097e\0\55\0\u09ab\0\u09d8\0\u0a05\0\u0a32"+
+    "\0\u0a5f\0\u0a8c\0\u0ab9\0\u0ae6\0\55\0\u0b13\0\u0b40\0\u0b6d"+
+    "\0\u0b9a\0\u0843\0\u0bc7\0\55\0\55\0\u0bf4\0\u0c21\0\55"+
+    "\0\u0c4e\0\55\0\u0c7b\0\u0ca8\0\55\0\55\0\u0cd5\0\u0d02"+
+    "\0\u0d2f\0\u0d5c\0\55\0\55\0\55\0\u0d89\0\u0db6\0\u0de3"+
+    "\0\55\0\55\0\55\0\u0e10\0\u0e3d\0\55\0\55\0\u0e6a"+
     "\0\55";
 
   private static int [] zzUnpackRowMap() {
@@ -180,37 +180,38 @@ class Lexer {
     "\1\2\2\3\1\0\1\4\1\5\1\6\1\7\1\10"+
     "\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\20"+
     "\1\21\1\22\1\23\1\24\1\25\1\2\1\26\1\27"+
-    "\1\30\1\31\1\32\1\33\2\2\1\34\4\2\1\35"+
-    "\1\36\1\37\1\40\1\41\1\42\1\2\1\43\1\44"+
-    "\57\0\1\3\72\0\2\45\4\0\25\45\30\0\25\46"+
-    "\11\0\1\47\55\0\1\50\15\0\25\51\15\0\1\52"+
-    "\3\0\1\53\55\0\2\21\57\0\1\54\54\0\1\55"+
-    "\54\0\1\56\74\0\1\57\52\0\1\60\50\0\1\61"+
-    "\60\0\1\62\52\0\1\63\1\64\42\0\1\65\12\0"+
-    "\1\66\46\0\1\67\4\0\1\70\46\0\1\71\67\0"+
-    "\1\72\44\0\1\73\5\0\1\74\51\0\1\75\42\0"+
-    "\1\76\63\0\1\77\5\0\1\100\30\0\2\101\4\0"+
-    "\25\101\22\0\2\46\4\0\25\46\2\0\13\102\1\103"+
-    "\41\102\2\53\1\3\1\53\1\4\50\53\44\0\1\104"+
-    "\52\0\1\105\41\0\1\106\72\0\1\107\41\0\1\110"+
-    "\62\0\1\111\60\0\1\112\47\0\1\113\6\0\1\114"+
-    "\35\0\1\115\13\0\1\116\55\0\1\117\43\0\1\120"+
-    "\70\0\1\121\53\0\1\122\52\0\1\123\47\0\1\124"+
-    "\54\0\1\125\35\0\2\126\4\0\25\126\2\0\13\102"+
-    "\1\127\54\102\1\127\3\102\1\130\35\102\27\0\1\131"+
-    "\65\0\1\132\60\0\1\133\43\0\1\134\60\0\1\135"+
-    "\62\0\1\136\55\0\1\137\41\0\1\140\53\0\1\141"+
-    "\55\0\1\142\60\0\1\143\56\0\1\144\46\0\1\145"+
-    "\60\0\1\146\55\0\1\147\62\0\1\150\26\0\2\151"+
-    "\4\0\25\151\2\0\13\102\1\127\3\102\1\3\35\102"+
-    "\52\0\1\152\36\0\1\153\53\0\1\154\65\0\1\155"+
-    "\37\0\1\156\66\0\1\157\53\0\1\160\47\0\1\161"+
-    "\54\0\1\162\41\0\2\163\4\0\25\163\37\0\1\164"+
-    "\65\0\1\165\43\0\1\166\37\0\2\167\4\0\25\167"+
-    "\35\0\1\170\65\0\1\171\10\0";
+    "\1\30\1\31\1\32\1\33\2\2\1\34\2\2\1\35"+
+    "\1\2\1\36\1\37\1\40\1\41\1\42\1\43\1\2"+
+    "\1\44\1\45\57\0\1\3\72\0\2\46\4\0\25\46"+
+    "\30\0\25\47\11\0\1\50\55\0\1\51\15\0\25\52"+
+    "\15\0\1\53\3\0\1\54\55\0\2\21\57\0\1\55"+
+    "\54\0\1\56\54\0\1\57\74\0\1\60\52\0\1\61"+
+    "\50\0\1\62\60\0\1\63\52\0\1\64\1\65\42\0"+
+    "\1\66\12\0\1\67\46\0\1\70\4\0\1\71\57\0"+
+    "\1\72\43\0\1\73\67\0\1\74\44\0\1\75\5\0"+
+    "\1\76\51\0\1\77\42\0\1\100\63\0\1\101\5\0"+
+    "\1\102\30\0\2\103\4\0\25\103\22\0\2\47\4\0"+
+    "\25\47\2\0\13\104\1\105\41\104\2\54\1\3\1\54"+
+    "\1\4\50\54\44\0\1\106\52\0\1\107\41\0\1\110"+
+    "\72\0\1\111\41\0\1\112\62\0\1\113\60\0\1\114"+
+    "\47\0\1\115\6\0\1\116\35\0\1\117\13\0\1\120"+
+    "\55\0\1\121\43\0\1\122\70\0\1\123\53\0\1\124"+
+    "\52\0\1\125\47\0\1\126\54\0\1\127\35\0\2\130"+
+    "\4\0\25\130\2\0\13\104\1\131\54\104\1\131\3\104"+
+    "\1\132\35\104\27\0\1\133\65\0\1\125\60\0\1\134"+
+    "\43\0\1\135\60\0\1\136\62\0\1\137\55\0\1\140"+
+    "\41\0\1\141\53\0\1\142\55\0\1\143\60\0\1\144"+
+    "\56\0\1\145\46\0\1\146\60\0\1\147\55\0\1\150"+
+    "\62\0\1\151\26\0\2\152\4\0\25\152\2\0\13\104"+
+    "\1\131\3\104\1\3\35\104\52\0\1\153\36\0\1\154"+
+    "\53\0\1\155\65\0\1\156\37\0\1\157\66\0\1\160"+
+    "\53\0\1\161\47\0\1\162\54\0\1\163\41\0\2\164"+
+    "\4\0\25\164\37\0\1\165\65\0\1\166\43\0\1\125"+
+    "\37\0\2\167\4\0\25\167\35\0\1\170\65\0\1\171"+
+    "\10\0";
 
   private static int [] zzUnpackTrans() {
-    int [] result = new int[3690];
+    int [] result = new int[3735];
     int offset = 0;
     offset = zzUnpackTrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -254,11 +255,11 @@ class Lexer {
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
     "\1\0\2\11\5\1\6\11\1\1\1\11\1\1\1\11"+
-    "\20\1\2\11\1\0\1\1\2\11\2\0\1\1\3\11"+
-    "\3\0\1\11\4\0\1\11\20\0\1\1\1\0\1\11"+
-    "\10\0\1\11\4\0\1\1\1\0\3\11\2\0\1\11"+
-    "\1\0\1\11\2\0\2\11\4\0\3\11\3\0\3\11"+
-    "\2\0\3\11\1\0\1\11";
+    "\21\1\2\11\1\0\1\1\2\11\2\0\1\1\3\11"+
+    "\3\0\1\11\4\0\1\11\1\0\1\11\17\0\1\1"+
+    "\1\0\1\11\1\0\1\1\6\0\1\11\4\0\1\1"+
+    "\1\0\2\11\2\0\1\11\1\0\1\11\2\0\2\11"+
+    "\4\0\3\11\3\0\3\11\2\0\2\11\1\0\1\11";
 
   private static int [] zzUnpackAttribute() {
     int [] result = new int[121];
@@ -740,222 +741,217 @@ class Lexer {
             { return token(yytext(), "ERROR", yyline, yycolumn);
             }
             // fall through
-          case 45: break;
+          case 44: break;
           case 2:
             { /*Ignorar*/
             }
             // fall through
-          case 46: break;
+          case 45: break;
           case 3:
-            { return token(yytext(), "PARENT. IZQ", yyline, yycolumn);
+            { return token(yytext(), "PARENTIZQ", yyline, yycolumn);
+            }
+            // fall through
+          case 46: break;
+          case 4:
+            { return token(yytext(), "PARENTDER", yyline, yycolumn);
             }
             // fall through
           case 47: break;
-          case 4:
-            { return token(yytext(), "PARENT. DER", yyline, yycolumn);
-            }
-            // fall through
-          case 48: break;
           case 5:
             { return token(yytext(), "MULTI", yyline, yycolumn);
             }
             // fall through
-          case 49: break;
+          case 48: break;
           case 6:
             { return token(yytext(), "SUMA", yyline, yycolumn);
             }
             // fall through
-          case 50: break;
+          case 49: break;
           case 7:
             { return token(yytext(), "COMA", yyline, yycolumn);
             }
             // fall through
-          case 51: break;
+          case 50: break;
           case 8:
             { return token(yytext(), "RESTA", yyline, yycolumn);
             }
             // fall through
-          case 52: break;
+          case 51: break;
           case 9:
             { return token(yytext(), "DIVISION", yyline, yycolumn);
             }
             // fall through
-          case 53: break;
+          case 52: break;
           case 10:
             { return token(yytext(), "NUMERO", yyline, yycolumn);
             }
             // fall through
-          case 54: break;
+          case 53: break;
           case 11:
             { return token(yytext(), "PUNTO Y COMA", yyline, yycolumn);
             }
             // fall through
-          case 55: break;
+          case 54: break;
           case 12:
-            { return token(yytext(), "MENOR QUE", yyline, yycolumn);
+            { return token(yytext(), "MENORQUE", yyline, yycolumn);
             }
             // fall through
-          case 56: break;
+          case 55: break;
           case 13:
             { return token(yytext(), "ASIGNACION", yyline, yycolumn);
             }
             // fall through
-          case 57: break;
+          case 56: break;
           case 14:
-            { return token(yytext(), "MAYOR QUE", yyline, yycolumn);
+            { return token(yytext(), "MAYORQUE", yyline, yycolumn);
+            }
+            // fall through
+          case 57: break;
+          case 15:
+            { return token(yytext(), "LLAVEIZQ", yyline, yycolumn);
             }
             // fall through
           case 58: break;
-          case 15:
-            { return token(yytext(), "LLAVE IZQ", yyline, yycolumn);
+          case 16:
+            { return token(yytext(), "LLAVEDER", yyline, yycolumn);
             }
             // fall through
           case 59: break;
-          case 16:
-            { return token(yytext(), "LLAVE DER", yyline, yycolumn);
-            }
-            // fall through
-          case 60: break;
           case 17:
             { return token(yytext(), "ID", yyline, yycolumn);
             }
             // fall through
-          case 61: break;
+          case 60: break;
           case 18:
             { return token(yytext(), "AND", yyline, yycolumn);
             }
             // fall through
-          case 62: break;
+          case 61: break;
           case 19:
             { return token(yytext(), "STRING", yyline, yycolumn);
             }
             // fall through
-          case 63: break;
+          case 62: break;
           case 20:
-            { return token(yytext(), "MENOR IGUAL QUE", yyline, yycolumn);
+            { return token(yytext(), "MENOR_IGUALQUE", yyline, yycolumn);
+            }
+            // fall through
+          case 63: break;
+          case 21:
+            { return token(yytext(), "IGUALQUE", yyline, yycolumn);
             }
             // fall through
           case 64: break;
-          case 21:
-            { return token(yytext(), "IGUAL QUE", yyline, yycolumn);
+          case 22:
+            { return token(yytext(), "MAYOR_IGUALQUE", yyline, yycolumn);
             }
             // fall through
           case 65: break;
-          case 22:
-            { return token(yytext(), "MAYOR IGUAL QUE", yyline, yycolumn);
-            }
-            // fall through
-          case 66: break;
           case 23:
             { return token(yytext(), "DO", yyline, yycolumn);
             }
             // fall through
-          case 67: break;
+          case 66: break;
           case 24:
             { return token(yytext(), "SI", yyline, yycolumn);
             }
             // fall through
-          case 68: break;
+          case 67: break;
           case 25:
+            { return token(yytext(), "OR", yyline, yycolumn);
+            }
+            // fall through
+          case 68: break;
+          case 26:
             { return token(yytext(), "TERMINAR", yyline, yycolumn);
             }
             // fall through
           case 69: break;
-          case 26:
+          case 27:
             { return token(yytext(), "POR", yyline, yycolumn);
             }
             // fall through
           case 70: break;
-          case 27:
-            { return token(yytext(), "VARIABLE", yyline, yycolumn);
+          case 28:
+            { return token(yytext(), "TIPO", yyline, yycolumn);
             }
             // fall through
           case 71: break;
-          case 28:
-            { return token(yytext(), "BULEANO", yyline, yycolumn);
-            }
-            // fall through
-          case 72: break;
           case 29:
             { return token(yytext(), "CARACTER", yyline, yycolumn);
             }
             // fall through
-          case 73: break;
+          case 72: break;
           case 30:
             { return token(yytext(), "ELSE", yyline, yycolumn);
             }
             // fall through
-          case 74: break;
+          case 73: break;
           case 31:
             { return token(yytext(), "EMPEZAR", yyline, yycolumn);
             }
             // fall through
-          case 75: break;
+          case 74: break;
           case 32:
             { return token(yytext(), "LEER", yyline, yycolumn);
             }
             // fall through
-          case 76: break;
+          case 75: break;
           case 33:
             { return token(yytext(), "DEPUES", yyline, yycolumn);
             }
             // fall through
-          case 77: break;
+          case 76: break;
           case 34:
             { return token(yytext(), "VERDADERO", yyline, yycolumn);
             }
             // fall through
-          case 78: break;
+          case 77: break;
           case 35:
             { return token(yytext(), "ARREGLO", yyline, yycolumn);
             }
             // fall through
-          case 79: break;
+          case 78: break;
           case 36:
-            { return token(yytext(), "TERMINAR SI", yyline, yycolumn);
+            { return token(yytext(), "TERMINAR_SI", yyline, yycolumn);
             }
             // fall through
-          case 80: break;
+          case 79: break;
           case 37:
             { return token(yytext(), "FALSO", yyline, yycolumn);
             }
             // fall through
-          case 81: break;
+          case 80: break;
           case 38:
             { return token(yytext(), "UNTIL", yyline, yycolumn);
             }
             // fall through
-          case 82: break;
+          case 81: break;
           case 39:
             { return token(yytext(), "MIENTRAS", yyline, yycolumn);
             }
             // fall through
-          case 83: break;
+          case 82: break;
           case 40:
             { return token(yytext(), "ESCRIBIR", yyline, yycolumn);
             }
             // fall through
-          case 84: break;
+          case 83: break;
           case 41:
             { return token(yytext(), "REPETIR", yyline, yycolumn);
             }
             // fall through
-          case 85: break;
+          case 84: break;
           case 42:
-            { return token(yytext(), "STRING FUNC", yyline, yycolumn);
-            }
-            // fall through
-          case 86: break;
-          case 43:
             { return token(yytext(), "COLOR", yyline, yycolumn);
             }
             // fall through
-          case 87: break;
-          case 44:
+          case 85: break;
+          case 43:
             { return token(yytext(), "ENTERO", yyline, yycolumn);
             }
             // fall through
-          case 88: break;
+          case 86: break;
           default:
             zzScanError(ZZ_NO_MATCH);
         }
