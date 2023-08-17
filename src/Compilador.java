@@ -361,7 +361,7 @@ public class Compilador extends javax.swing.JFrame {
         
         /*Agrupar valores */
         
-        gramatica.group("VALOR", "NUMERO | STRING" , true);
+        gramatica.group("VALOR", "NUMERO | STRING | VERDADERO | FALSO" , true);
         
         /*Declaracion Variables */
         
@@ -450,10 +450,20 @@ public class Compilador extends javax.swing.JFrame {
     }
 
     private void semanticAnalysis() {
+        HashMap<String,String> identDataType = new HashMap<>();
+        
+        identDataType.put("int","NUMERO");
+        identDataType.put("var","NUMERO");
+        identDataType.put("string", "STRING");
+        identDataType.put("bool","VERDADERO");
+        //identDataType.put("bool","FALSO");
         for(Production id : identProd){
         
-            System.out.println(id.lexemeRank(0,-1));
-            System.out.println(id.lexicalCompRank(0,-1));
+            if(!identDataType.get(id.lexemeRank(0)).equals(id.lexicalCompRank(-1))){
+                errors.add(new ErrorLSSL(1,"Error Semantico {}: Valor no compatible con tipo de dato [#,%]",id,true));
+            } else {
+                identificadores.put(id.lexemeRank(1),id.lexemeRank(-1));
+            }
             
         }
     }

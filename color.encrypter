@@ -1,2 +1,2 @@
-int $gato = 12;
-string $nombre = 'pedro';
+var $cajas = 54;
+string $nombre = 'Pedro';
