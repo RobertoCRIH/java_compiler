@@ -360,8 +360,9 @@ public class Compilador extends javax.swing.JFrame {
         gramatica.delete( new String[]{"ERROR"} , 1 );
         
         /*Agrupar valores */
-        
-        gramatica.group("VALOR", "NUMERO | STRING | VERDADERO | FALSO" , true);
+        gramatica.group("MATH", "(SUMA | RESTA | MULTI | DIVISION)",true);
+        gramatica.group("VALOR", "STRING | VERDADERO | FALSO" , true);
+        gramatica.group("VALOR", "NUMERO (MATH NUMERO)*");
         
         /*Declaracion Variables */
         

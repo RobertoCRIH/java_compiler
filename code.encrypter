@@ -1,2 +1,2 @@
-var $cajas = 54;
-string $nombre = 'Pedro';
+var $cajas = 54  + 5 / 12;
+
