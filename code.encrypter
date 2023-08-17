@@ -1,9 +1,2 @@
-int $perro = 2;
-
-while( $perro > 0 ){
-int $gatos = 1;
-write('hola');
-if($gatos){
-write('Hola');
-}
-}
+int $gato = 12;
+string $nombre = 'pedro';

@@ -365,7 +365,7 @@ public class Compilador extends javax.swing.JFrame {
         
         /*Declaracion Variables */
         
-        gramatica.group("VARIABLES", "TIPO ID ASIGNACION VALOR",true);
+        gramatica.group("VARIABLES", "TIPO ID ASIGNACION VALOR",true,identProd);
         //Errores de definicion de variables
         gramatica.group("VARIABLES", "TIPO ASIGNACION VALOR",true, 2,"Error Sintactico. No hay identificador [#,%]");
         gramatica.group("VARIABLES", "TIPO ID ASIGNACION ",true,3 ,"Error Sintactico. Falta el valor de la declaracion [#,%]");
@@ -450,6 +450,12 @@ public class Compilador extends javax.swing.JFrame {
     }
 
     private void semanticAnalysis() {
+        for(Production id : identProd){
+        
+            System.out.println(id.lexemeRank(0,-1));
+            System.out.println(id.lexicalCompRank(0,-1));
+            
+        }
     }
 
     private void colorAnalysis() {
