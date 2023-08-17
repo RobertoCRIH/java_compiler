@@ -389,7 +389,7 @@ public class Compilador extends javax.swing.JFrame {
         gramatica.group("EXP_LOGICA", "(COMPARACION | EXP_LOGICA ) (OP_LOGICO (COMPARACION | EXP_LOGICA)) ");
         
         //AGRUPAR FUNCIONES
-        gramatica.group("FUNCION", "SI | TERMINAR_SI | UNTIL | POR | MIENTRAS | ESCRIBIR | LEER");
+        gramatica.group("FUNCION", "TERMINAR_SI | UNTIL | POR  | ESCRIBIR | LEER");
         gramatica.group("FUNCION_COMPLETA", "FUNCION PARENTIZQ (VALOR | PARAMETROS | COMPARACION | EXP_LOGICA)? PARENTDER");
         //Errores de funciones
         gramatica.group("FUNCION_COMPLETA", "FUNCION (VALOR | PARAMETROS | COMPARACION)? PARENTDER",true, 6,
@@ -400,6 +400,38 @@ public class Compilador extends javax.swing.JFrame {
         //Eliminacion de funciones incompletas
         gramatica.delete("FUNCION",8,"error sintactico {}");
         /* Mostrar gramáticas */
+        
+        
+        //Agrupacion de ESTRUCTURAS DE CONTROL
+        gramatica.group("EST_CONTROL", "( SI | MIENTRAS | REPETIR)");
+        gramatica.group("EST_CONTROL_COMP", "EST_CONTROL PARENTIZQ PARENTDER");
+        gramatica.group("EST_CONTROL", "EST_CONTROL (VALOR | PARAMETROS)");
+        gramatica.group("EST_CONTROL_COMP", "EST_CONTROL PARENTIZQ ( VALOR | PARAMETROS ) PARENTDER");
+        
+        //Errores
+         gramatica.group("EST_CONTROL_COMP", "EST_CONTROL ( VALOR | PARAMETROS ) PARENTDER",true,9,
+                 "ERROR SINTACTICO. Falta parentesis [#,%]");
+        gramatica.group("EST_CONTROL_COMP", "EST_CONTROL PARENTIZQ ( VALOR | PARAMETROS ) ",true,10,
+                 "ERROR SINTACTICO. Falta parentesis [#,%]");
+        
+        //Eliminacion de estructuras de control incompletas
+        gramatica.delete("EST_CONTROL",11,
+                "ERROR SINTACTICO {}. La estructura de control no está declarada correctamente");
+        
+        //Eliminacion de parentesis
+        gramatica.delete(new String []{"PARENTIZQ","PARENTDER",},12,
+                "ERROR SINTACTICO {}. La estructura de control no está declarada correctamente");
+        
+        
+        //Punto y coma
+        gramatica.finalLineColumn();
+        
+        //Punto y coma al final de las variables
+        gramatica.group("VARIABLE_PC", "VARIABLE PUNTO_COMA",true);
+        gramatica.group("VARIABLE PC", "VARIABLE",true,13,
+                "ERROR SINTACTICO. Falta punto y coma al final de la variable");
+        
+        
         gramatica.show();
     }
 
