@@ -788,7 +788,7 @@ class Lexer {
             // fall through
           case 53: break;
           case 11:
-            { return token(yytext(), "PUNTO Y COMA", yyline, yycolumn);
+            { return token(yytext(), "PUNTO_COMA", yyline, yycolumn);
             }
             // fall through
           case 54: break;

@@ -61,7 +61,7 @@ bool { return token(yytext(), "TIPO", yyline, yycolumn); }
 
 /* Signos de Puntuacion*/
 "," {return token(yytext(), "COMA", yyline, yycolumn);}
-";" {return token(yytext(), "PUNTO Y COMA", yyline, yycolumn);}
+";" {return token(yytext(), "PUNTO_COMA", yyline, yycolumn);}
 
 /* Operadores */
 \= {return token(yytext(), "ASIGNACION", yyline, yycolumn);}

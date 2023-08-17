@@ -1,1 +1,9 @@
-while $gato )
+int $perro = 2;
+
+while( $perro > 0 ){
+int $gatos = 1;
+write('hola');
+if($gatos){
+write('Hola');
+}
+}

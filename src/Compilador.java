@@ -370,7 +370,7 @@ public class Compilador extends javax.swing.JFrame {
         gramatica.group("VARIABLES", "TIPO ASIGNACION VALOR",true, 2,"Error Sintactico. No hay identificador [#,%]");
         gramatica.group("VARIABLES", "TIPO ID ASIGNACION ",true,3 ,"Error Sintactico. Falta el valor de la declaracion [#,%]");
         gramatica.group("VARIABLES", "TIPO ID VALOR",true,4 ,"Error Sintactico. Falta el asignador de la declaracion [#,%]");
-        
+        gramatica.group("VARIABLES", "ID ASIGNACION VALOR",true,4 ,"Error Sintactico. Falta el tipo de la declaracion [#,%]");
         /* Eliminacion de tipos de datos */
         gramatica.delete("TIPO",5,"ERROR SINTACTICO {}. Tipo de dato sin declaración");
         
@@ -406,7 +406,7 @@ public class Compilador extends javax.swing.JFrame {
         gramatica.group("EST_CONTROL", "( SI | MIENTRAS | REPETIR)");
         gramatica.group("EST_CONTROL_COMP", "EST_CONTROL PARENTIZQ PARENTDER");
         gramatica.group("EST_CONTROL", "EST_CONTROL (VALOR | PARAMETROS)");
-        gramatica.group("EST_CONTROL_COMP", "EST_CONTROL PARENTIZQ ( VALOR | PARAMETROS ) PARENTDER");
+        gramatica.group("EST_CONTROL_COMP", "EST_CONTROL PARENTIZQ ( VALOR | PARAMETROS | COMPARACION) PARENTDER");
         
         //Errores
          gramatica.group("EST_CONTROL_COMP", "EST_CONTROL ( VALOR | PARAMETROS ) PARENTDER",true,9,
@@ -427,10 +427,24 @@ public class Compilador extends javax.swing.JFrame {
         gramatica.finalLineColumn();
         
         //Punto y coma al final de las variables
-        gramatica.group("VARIABLE_PC", "VARIABLE PUNTO_COMA",true);
-        gramatica.group("VARIABLE PC", "VARIABLE",true,13,
+        gramatica.group("VARIABLE_PC", "VARIABLES PUNTO_COMA",true);
+        gramatica.group("VARIABLE_PC", "VARIABLES",true,13,
                 "ERROR SINTACTICO. Falta punto y coma al final de la variable");
         
+        //Punto y coma en las funciones
+        gramatica.group("FUNCION_COMPLETA_PC", "FUNCION_COMPLETA PUNTO_COMA",true);
+        gramatica.group("FUNCION_COMPLETA_PC", "FUNCION_COMPLETA",true,14,"ERROR SINTACTICO. Falta punto y coma [#,%]");
+        
+        gramatica.delete("PUNTO_COMA",15,"Error Sintactico {}. El punto y coma no esta al final");
+        
+        //Declaracion de sentencias
+        gramatica.group("SENTENCIAS", "(VARIABLE_PC | FUNCION_COMPLETA_PC)");
+        //ESTRUCTURA DE CONTROL CON LLAVES
+        gramatica.group("EST_CONTROL_COMP_LASLC", "EST_CONTROL_COMP LLAVEIZQ (SENTENCIAS)+ LLAVEDER",true);
+        gramatica.group("EST_CONTROL_COMP_LASLC", "EST_CONTROL_COMP  (SENTENCIAS)+ LLAVEDER",true,15,
+                "Error Sintactico {}. Falta la llave de apertura [#,%]");
+        gramatica.group("EST_CONTROL_COMP_LASLC", "EST_CONTROL_COMP LLAVEIZQ LLAVEDER",true,16,
+                "Error Sintactico {}. Falta sentencia [#,%]");
         
         gramatica.show();
     }
